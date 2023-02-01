@@ -35,13 +35,21 @@ server.post("/signin", (req, res) => {
   const { id, email, password } = req.body;
   const data = fs.readFileSync("users.json", "utf-8");
   const parsedData = JSON.parse(data);
-  const findUser = parsedData.users.find((user) => user.id === id);
+  const findUser = parsedData.users.find((user) => user.email === email);
+
   if (!findUser) {
-    res.status(401).json({ message: "Iim hereglegch oldsngui" });
+    res.status(401).json({ message: "Email burtgelgui bna", user: null });
+    return;
   }
-  const isCheck = bcrypt.compareSync(password, findUser.password);
-  if (isCheck) {
-    res.status(200).json({ message: "Amjlttai newterlee", user: null });
+
+  if (findUser) {
+    const isCheck = bcrypt.compareSync(password, findUser.password);
+    if (isCheck)
+      res.status(200).json({ message: "Amjlttai newterlee", user: null });
+    else
+      res
+        .status(401)
+        .json({ message: "Email esvel password buruu bna", user: null });
   }
 });
 
