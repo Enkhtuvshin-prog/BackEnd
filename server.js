@@ -29,10 +29,10 @@ server.post("/signup", (req, res) => {
   };
   parsedData.users.push(newUser);
   fs.writeFileSync("users.json", JSON.stringify(parsedData));
-  res.status(201).json({ message: "amjilttai burtgegdlee" });
+  res.status(201).json({ message: "hereglegch amjilttai burtgegdlee" });
 });
 server.post("/signin", (req, res) => {
-  const { id, email, password } = req.body;
+  const { email, password } = req.body;
   const data = fs.readFileSync("users.json", "utf-8");
   const parsedData = JSON.parse(data);
   const findUser = parsedData.users.find((user) => user.email === email);
@@ -45,7 +45,7 @@ server.post("/signin", (req, res) => {
   if (findUser) {
     const isCheck = bcrypt.compareSync(password, findUser.password);
     if (isCheck)
-      res.status(200).json({ message: "Amjlttai newterlee", user: null });
+      res.status(200).json({ message: "Amjlttai newterlee", user: findUser });
     else
       res
         .status(401)
@@ -96,6 +96,10 @@ server.delete("/users/:id", (req, res) => {
   res
     .status(201)
     .json({ message: `${id} тай хэрэглэгч амжилттай устгагдлаа.` });
+});
+
+server.get("/category", (req, res) => {
+  fs.readFileSync("category.json", "utf-8", (err, data) => {});
 });
 
 server.listen(port, () => {
