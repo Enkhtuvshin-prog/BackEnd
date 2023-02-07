@@ -98,8 +98,16 @@ server.delete("/users/:id", (req, res) => {
     .json({ message: `${id} тай хэрэглэгч амжилттай устгагдлаа.` });
 });
 
-server.get("/category", (req, res) => {
-  fs.readFileSync("category.json", "utf-8", (err, data) => {});
+server.get("/package", (req, res) => {
+  fs.readFileSync("travelData.json", "utf-8", (err, data) => {
+    if(err){
+      console.log("ERROR");
+      return;
+    }
+    console.log(data);
+    const parsedData = JSON.parse(data)
+    res.status(201).json({travel: parsedData.data})
+  });
 });
 
 server.listen(port, () => {
