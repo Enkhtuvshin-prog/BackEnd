@@ -96,19 +96,33 @@ server.delete("/users/:id", (req, res) => {
   res
     .status(201)
     .json({ message: `${id} тай хэрэглэгч амжилттай устгагдлаа.` });
-});
+} );
+ 
+server.post("/categories", (req, res) =>{
+  res.status(200).json({ message: "Hello express server" })
+  try{
+    const content = fs.readFileSync("categories.json", "utf-8");
+    const data = JSON.parse(content)
+    const  newData = { ...req.body};
+    data.categories.push(newData);
+    fs.writeFileSync("categories.json", JSON.stringify(data));
+    res.status(201).json({message: "amjilttai uuseglee", data: newData});
+  } catch(err){
+    return res.status(400).json({message: err.message})
+  }
+  res.json({})
+}) 
 
-server.get("/package", (req, res) => {
-  fs.readFileSync("travelData.json", "utf-8", (err, data) => {
-    if(err){
-      console.log("ERROR");
-      return;
-    }
-    console.log(data);
-    const parsedData = JSON.parse(data)
-    res.status(201).json({travel: parsedData.data})
-  });
-});
+server.get("/categories", (req, res) => {
+  try{
+   const categories =  fs.readFileSync("categories.json", "utf-8");
+    const data = JSON.parse(categories);
+    res.status(200).json({message: "success", data: data});
+    console.log("data:", data);
+  } catch(err){
+    return  res.status(400).json({ message: err.message});
+  }
+}) ;
 
 server.listen(port, () => {
   console.log(`server start ${port}`);
