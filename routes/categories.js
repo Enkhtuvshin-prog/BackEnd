@@ -4,7 +4,6 @@ const { v4: uuidv4 } = require("uuid");
 const router = Router();
 
 router.post("/", (req, res) => {
-  res.status(200).json({ message: "Hello express server" });
   try {
     const content = fs.readFileSync("categories.json", "utf-8");
     const data = JSON.parse(content);
