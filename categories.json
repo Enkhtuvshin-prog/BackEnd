@@ -1,1 +1,13 @@
-{"categories":[{" title":"Beaches"," img ":"/img/blog-1"},{" title":"Deserts"," img ":"/img/blog-1"},{" title":"Mountains"," img ":"/img/blog-1"},{" title":"Houseboats"," img ":"/img/blog-1"},{" title":"Countryside"," img ":"/img/blog-1"},{" title":"Camping"," img ":"/img/blog-1"},{" title":"Castles"," img ":"/img/blog-1"},{" title":"Skiing"," img ":"/img/blog-1"},{" title":"Tropical"," img ":"/img/blog-1"}]}
+{
+  "categories": [
+    { "title": "Beaches", "img": "/img/blog-1" },
+    { "title": "Deserts", "img": "/img/blog-1" },
+    { "title": "Mountains", "img": "/img/blog-1" },
+    { "title": "Houseboats", "img": "/img/blog-1" },
+    { "title": "Countryside", "img": "/img/blog-1" },
+    { "title": "Camping", "img": "/img/blog-1" },
+    { "title": "Castles", "img": "/img/blog-1" },
+    { "title": "Skiing", "img": "/img/blog-1" },
+    { "title": "Tropical", "img": "/img/blog-1" }
+  ]
+}
