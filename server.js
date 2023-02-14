@@ -4,6 +4,7 @@ const usersRoute = require("./routes/users");
 const categoriesRoute = require("./routes/categories");
 const signinRoute = require("./routes/signin");
 const signupRoute = require("./routes/signup");
+const travelRoute = require("./routes/travel")
 // const fs = require("fs");
 const port = 8003;
 // const res = require("express/lib/response");
@@ -19,6 +20,7 @@ server.use("/users", usersRoute);
 server.use("/categories", categoriesRoute);
 server.use("/signin", signinRoute);
 server.use("/signup", signupRoute);
+server.use("/travel", travelRoute)
 server.listen(port, () => {
   console.log(`server start ${port}`);
 });
