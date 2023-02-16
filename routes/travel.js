@@ -1,8 +1,8 @@
-const { Router, json } = require("express");
-const { getUsers, updateUser } = require("../controllers/travel");
+const { Router } = require("express");
+const { getUsers } = require("../controllers/travel");
 const router = Router();
 
 // router.post("/", getUsers);
-router.get("/", getUsers).post("/", createUser).put("/:id", updateUser);
+router.get("/", getUsers);
 
 module.exports = router;

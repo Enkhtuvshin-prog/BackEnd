@@ -1,6 +1,5 @@
 const fs = require("fs");
-const { v4: uuidv4 } = require("uuid");
-const router = Router();
+// const { v4: uuidv4 } = require("uuid");
 
 const getUsers = (req, res) => {
   try {
@@ -37,6 +36,5 @@ const updateUser = (req, res) => {
   fs.writeFileSync("travel.json", JSON.stringify(parsedData));
   res.status(201).json({ message: `${id} hereglegch amjilttai ustlaa ` });
 };
-module.exports = { createUser };
 module.exports = { getUsers };
 module.exports = { updateUser };
