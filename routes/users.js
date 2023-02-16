@@ -1,22 +1,10 @@
 const { Router } = require("express");
 const fs = require("fs");
-const { v4: uuidv4 } = require("uuid");
-const { parse } = require("path");
 const bcrypt = require("bcrypt");
+const { getUsers } = require("../controllers/users");
 const router = Router();
 
-router.get("/", (req, res) => {
-  fs.readFile("users.json", "utf-8", (err, data) => {
-    if (err) {
-      console.log("ERROR");
-      return;
-    }
-    console.log(data);
-    const parsedData = JSON.parse(data);
-
-    res.status(201).json({ users: parsedData.users });
-  });
-});
+router.get("/", getUsers);
 
 router.get("/:id", (req, res) => {
   const { id } = req.params;
