@@ -37,4 +37,19 @@ const updateTravel = (req, res) => {
   res.status(201).json({ message: `${id} hereglegch amjilttai ustlaa ` });
 };
 
-module.exports = { createTravel, getTravels, updateTravel };
+const getTravelsByCategory = (req, res) => {
+  const category = req.params.travel;
+  const data = fs.readFileSync(filePath, "utf-8");
+  const parsedData = JSON.parse(data);
+  const findCategories = parsedData.travels.filter(
+    (el) => el.category === category
+  );
+  res.status(201).json({ message: `success`, data: findCategories });
+};
+
+module.exports = {
+  createTravel,
+  getTravels,
+  updateTravel,
+  getTravelsByCategory,
+};
