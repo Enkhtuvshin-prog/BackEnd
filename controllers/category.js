@@ -3,11 +3,11 @@ const { v4: uuidv4 } = require("uuid");
 
 const createCategory = (req, res) => {
   try {
-    const content = fs.readFileSync("categories.json", "utf-8");
+    const content = fs.readFileSync("./data/categories.json", "utf-8");
     const data = JSON.parse(content);
     const newData = { ...req.body };
     data.categories.push(newData);
-    fs.writeFileSync("categories.json", JSON.stringify(data));
+    fs.writeFileSync("./data/categories.json", JSON.stringify(data));
     res.status(201).json({ message: "amjilttai uuseglee", data: newData });
   } catch (err) {
     return res.status(400).json({ message: err.message });
@@ -17,7 +17,7 @@ const createCategory = (req, res) => {
 
 const getCategory = (req, res) => {
   try {
-    const categories = fs.readFileSync("categories.json", "utf-8");
+    const categories = fs.readFileSync("./data/categories.json", "utf-8");
     const data = JSON.parse(categories);
     res.status(200).json({ message: "success", data: data });
     console.log("data:", data);
@@ -28,7 +28,7 @@ const getCategory = (req, res) => {
 
 const updateCategory = (req, res) => {
   try {
-    const categoriesData = fs.readFileSync("categories.json", "utf-8");
+    const categoriesData = fs.readFileSync("./data/categories.json", "utf-8");
     console.log("CC", categoriesData);
     const data = JSON.parse(categoriesData);
     console.log("DD", data);
@@ -45,7 +45,7 @@ const updateCategory = (req, res) => {
       ...req.body,
     };
 
-    fs.writeFileSync("categories.json", JSON.stringify(data));
+    fs.writeFileSync("./data/categories.json", JSON.stringify(data));
     res
       .status(200)
       .json({ message: "success", data: data.categoriesData[findIndex] });
@@ -56,7 +56,7 @@ const updateCategory = (req, res) => {
 
 const deletedCategory = (req, res) => {
   try {
-    const categoriesData = fs.readFileSync("categories.json", "utf-8");
+    const categoriesData = fs.readFileSync("./data/categories.json", "utf-8");
     console.log("CC", categoriesData);
     const data = JSON.parse(categoriesData);
     console.log("DD", data);
@@ -71,7 +71,7 @@ const deletedCategory = (req, res) => {
 
     data.categoriesData = findArr;
 
-    fs.writeFileSync("categories.json", JSON.stringify(data));
+    fs.writeFileSync("./data/categories.json", JSON.stringify(data));
     res.status(200).json({ message: "success", data: deletedCategory });
   } catch (error) {
     return res.status(400).json({ message: err.message });
