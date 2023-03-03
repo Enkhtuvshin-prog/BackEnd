@@ -67,8 +67,15 @@ server.delete("/:id", (req, res) => {
   );
 });
 server.put("/:id", (req, res) => {
+  const body = req.body;
+  const convertToStr = (body) => {
+    const keys = Object.keys(body);
+    const dd = keys.map((key) => `${key}='${body[key]}'`).join();
+    return dd;
+  };
+  const updateQuery = convertToStr(body);
   connection.query(
-    `UPDATE azure_user SET name="${req.body.name}" , ovog = "${req.body.ovog}"  WHERE aid =${req.params.id} `,
+    `UPDATE azure_user SET ${updateQuery}  WHERE aid =${req.params.id} `,
     (err, result, fields) => {
       if (err) {
         return res.status(400).json({ message: err.message });
