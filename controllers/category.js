@@ -2,6 +2,7 @@ const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 
 const createCategory = (req, res) => {
+
   try {
     const content = fs.readFileSync("./data/categories.json", "utf-8");
     const data = JSON.parse(content);
