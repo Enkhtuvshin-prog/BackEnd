@@ -91,7 +91,7 @@ const updateUser = (req, res) => {
 const createUser = (req, res) => {
   const { name, role, email, password } = req.body;
   connection.query(
-    `INSERT INTO users(id, name, email, password, role) VALUES(${id}, ${name}, ${email}, ${password}, ${role})`,
+    `INSERT INTO users (id, name, email, password, role) VALUES(${id}, ${name}, ${email}, ${password}, ${role})`,
     (err, result) => {
       if (err) {
         res.status(400).json({ message: err.message });
