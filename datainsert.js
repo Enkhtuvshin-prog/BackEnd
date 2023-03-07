@@ -1,15 +1,16 @@
-const connection = require("../config/azure_db");
+const connection = require("./config/db");
 const fs = require("fs");
 const insertIntoData = (tableName, data) => {
   connection.query(
-    `INSERT INTO users (id,name, email, password, role) VALUES${data}; `,
+    `INSERT INTO users (id, name, email, password, role) VALUES ${data}; `,
     (err, result) => {
       if (err) {
-        // console.log("ERROR---", err);
-        return res.status(400).json({ message: err.message });
+        console.log("ERROR---", err);
+        return 
+        // res.status(400).json({ message: err.message });
       }
-      //   console.log(result);
-      res.status(200).json({ message: "Huselt amjilttai", data: result });
+        console.log(result);
+      // res.status(200).json({ message: "Huselt amjilttai", data: result });
     }
   );
 };
@@ -23,4 +24,4 @@ const insertData = datas
   )
   .join();
 insertIntoData("users", insertData);
-console.log("first---", insertData);
+// console.log("first---", insertData);
