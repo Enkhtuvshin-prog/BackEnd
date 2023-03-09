@@ -89,9 +89,10 @@ const updateUser = (req, res) => {
   );
 };
 const createUser = (req, res) => {
-  const { name, role, email, password } = req.body;
+  const { id, name, email, password, phone_number, profileImg } = req.body;
+  console.log({ id, name, email, password, phone_number, profileImg });
   connection.query(
-    `INSERT INTO users (id, name, email, password, role) VALUES(${id}, ${name}, ${email}, ${password}, ${role})`,
+    `INSERT INTO users (id, name, email, password, phone_number, profileImg) VALUES(${id}, "${name}", "${email}", "${password}", ${phone_number}," ${profileImg}")`,
     (err, result) => {
       if (err) {
         res.status(400).json({ message: err.message });

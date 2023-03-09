@@ -4,25 +4,37 @@
       "id": "045d9b76-6c40-491c-99bb-540ad97cae7a",
       "name": "Anu",
       "email": "lolu@gmail.com",
-      "password": "pass456"
+      "password": "pass456",
+      "role": "",
+      "phone_number": 99887766,
+      "profileImg": "/img/kk"
     },
     {
       "id": "eedd7b1e-bef5-4b80-a67d-c40db7603f5b",
       "name": "Anu",
       "email": "anu@gmail.com",
-      "password": "pass987"
+      "password": "pass987",
+      "role": "",
+      "phone_number": 99887766,
+      "profileImg": "/img/kk"
     },
     {
       "id": "d5a624bc-63ef-49f3-91e4-e4c414ad4ebd",
       "name": "uu",
       "email": "pp000@gmail.com",
-      "password": "code98"
+      "password": "code98",
+      "role": "",
+      "phone_number": 99887766,
+      "profileImg": "/img/kk"
     },
     {
       "id": "cb6a8cc4-de0d-4565-9821-189a40d51999",
       "name": "v",
       "email": "fsv@gmail.com",
-      "password": "pass489"
+      "password": "pass489",
+      "role": "",
+      "phone_number": "99887766",
+      "profileImg": "/img/kk"
     }
   ]
 }

@@ -1,0 +1,40 @@
+{
+  "agent": [
+    {
+      "id": 1,
+      "user_name": "MOON",
+      "agent_name": "SOON",
+      "email": "soon@gmail.com",
+      "password": "llll123",
+      "role": "",
+      "phone_number": 99859099
+    },
+    {
+      "id": 2,
+      "user_name": "MOON",
+      "agent_name": "SOON",
+      "email": "soon@gmail.com",
+      "password": "llll123",
+      "role": "",
+      "phone_number": 99859089
+    },
+    {
+      "id": 3,
+      "user_name": "MOON",
+      "agent_name": "SOON",
+      "email": "soon@gmail.com",
+      "password": "llll123",
+      "role": "",
+      "phone_number": 99859088
+    },
+    {
+      "id": 4,
+      "user_name": "MOON",
+      "agent_name": "SOON",
+      "email": "soon@gmail.com",
+      "password": "llll123",
+      "role": "",
+      "phone_number": 99859000
+    }
+  ]
+}
