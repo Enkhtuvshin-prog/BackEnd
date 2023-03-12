@@ -6,12 +6,14 @@ const {
   getCategory,
   updateCategory,
   deletedCategory,
+  allgetCategories,
 } = require("../controllers/category");
 const router = Router();
 
 router
+.get("/", allgetCategories)
   .post("/", createCategory)
-  .get("/", getCategory)
+  .get("/:id", getCategory)
   .put("/:id", updateCategory)
   .delete("/:id", deletedCategory);
 

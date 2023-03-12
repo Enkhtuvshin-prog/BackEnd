@@ -42,14 +42,21 @@
 6; // `UPDATE azure_user SET ${updateQuery} WHERE aid=${id}`;
 
 //  { name: "naraa", ovog: "JON" }
-const convertToStr = (body) => {
-  const keys = Object.keys(body); //keys: ["name","ovog"]
-  const values = Object.values(body); //keys: ["name","ovog"]
-  const dd = keys.map((key) => `${key}='${body[key]}'`).join();
-  return dd;
-};
-const body = { name: "naraa", ovog: "JON", age: 100, address: "BZD" };
-const updateQuery = convertToStr(body);
-console.log("DD: ", updateQuery);
+// const convertToStr = (body) => {
+//   const keys = Object.keys(body); //keys: ["name","ovog"]
+//   const values = Object.values(body); //keys: ["name","ovog"]
+//   const dd = keys.map((key) => `${key}='${body[key]}'`).join();
+//   return dd;
+// };
+// const body = { name: "naraa", ovog: "JON", age: 100, address: "BZD" };
+// const updateQuery = convertToStr(body);
+// console.log("DD: ", updateQuery);
 
-6; // `UPDATE azure_user SET ${updateQuery} WHERE aid=${id}`;
+ // `UPDATE azure_user SET ${updateQuery} WHERE aid=${id}`;
+// const body = { name: "naraa", age: 23 };
+// const keys = Object.values(body);
+// const values = Object.values({ name: "naraa" });
+// const ob = Object.entries(body);
+
+// console.log(keys);
+// console.log(values);

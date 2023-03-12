@@ -2,7 +2,7 @@ const connection = require("./config/db");
 const fs = require("fs");
 const insertIntoData = (tableName, data) => {
   connection.query(
-    `INSERT INTO travel (id, title, images, detail, price, location, day, cat_id) VALUES${data}; `,
+    `INSERT INTO travel (id, title, image, detail, price, location, day, cat_id) VALUES${data}; `,
     (err, result) => {
       if (err) {
         console.log("ERROR---", err);
@@ -20,7 +20,7 @@ const datas = JSON.parse(content).travel;
 const insertData = datas
   .map(
     (data) =>
-      `(null, "${data.title}", "${data.img}", "${data.detail}", "${data.price}","${data.location}","${data.day}","${data.cat_id}")`
+      `(${data.id}, "${data.title}", "${data.img}", "${data.detail}", ${data.price},"${data.location}",${data.day},${data.cat_id})`
   )
   .join();
 insertIntoData("travel", insertData);

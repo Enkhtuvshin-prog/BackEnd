@@ -2,7 +2,7 @@ const connection = require("./config/db");
 const fs = require("fs");
 const insertIntoData = (tableName, data) => {
   connection.query(
-    `INSERT INTO category (id, title, image, description) VALUES${data}; `,
+    `INSERT INTO category (id, title, image, description, agent_id) VALUES${data}; `,
     (err, result) => {
       if (err) {
         console.log("ERROR---", err);
@@ -20,7 +20,7 @@ const datas = JSON.parse(content).category;
 const insertData = datas
   .map(
     (data) =>
-      `(null, "${data.title}", "${data.img}", "${data.description}")`
+      `(${data.id}, "${data.title}", "${data.img}", "${data.description}", ${data.agent_id})`
   )
   .join();
 insertIntoData("category", insertData);

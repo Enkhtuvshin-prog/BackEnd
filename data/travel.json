@@ -6,34 +6,34 @@
       "title": "Mountains",
       "detail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas vel labore numqua.",
       "price": 2500,
-      "location": "Tokye",
+      "location": "Tokyo",
       "day": 8,
       "cat_id": 1
     },
     {
       "id": 2,
       "img": "/img/Destination2.png",
-      "title": "Mountains",
+      "title": "Tokyo",
       "detail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas vel labore numqua.",
       "price": 1500,
-      "location": "Tokye",
+      "location": "Tokyo",
       "day": 4,
       "cat_id": 1
     },
     {
       "id": 3,
       "img": "/img/Destination3.png",
-      "title": "Mountains",
+      "title": "Shanghai",
       "detail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas vel labore numqua.",
       "price": 1750,
-      "location": "Beijing",
+      "location": "China",
       "day": 4,
       "cat_id": 2
     },
     {
       "id": 4,
       "img": "/img/Destination4.png",
-      "title": "Mountains",
+      "title": "Beaches",
       "detail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas vel labore numqua.",
       "price": 2000,
       "location": "Honkong",
@@ -43,10 +43,10 @@
     {
       "id": 5,
       "img": "/img/Destination5.png",
-      "title": "Mountains",
+      "title": "Seoul",
       "detail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas vel labore numqua.",
       "price": 3000,
-      "location": "Tokye",
+      "location": "Seul",
       "day": 4,
       "cat_id": 1
     }

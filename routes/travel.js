@@ -4,6 +4,7 @@ const {
   createTravel,
   updateTravel,
   getTravelsByCategory,
+  deleteTravel,
 } = require("../controllers/travel");
 const router = Router();
 
@@ -11,8 +12,9 @@ const router = Router();
 router.get("/", getTravels);
 router.post("/", createTravel);
 
-router.get("/category/:travel", getTravelsByCategory);
+router.get("/:travel", getTravelsByCategory);
 
 router.put("/:id", updateTravel);
+router.delete("/:id", deleteTravel);
 
 module.exports = router;

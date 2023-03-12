@@ -5,28 +5,28 @@
       "title": "Beaches",
       "img": "/img/blog-1",
       "description": "POOLE",
-      "agent_id": null
+      "agent_id": 1
     },
     {
       "id": 2,
       "title": "Deserts",
       "img": "/img/blog-4",
       "description": "POOLE",
-      "agent_id": null
+      "agent_id":2
     },
     {
       "id": 4,
       "title": "Mountains",
       "img": "/img/blog-3",
       "description": "POOLE",
-      "agent_id": null
+      "agent_id": 3
     },
     {
       "id": 3,
       "title": "Mountains",
       "img": "/img/blog-2",
       "description": "POOLE",
-      "agent_id": null
+      "agent_id": 4
     }
   ]
 }
