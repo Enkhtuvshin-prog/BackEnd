@@ -88,13 +88,25 @@ const deleteTravel = (req, res)=>{
 
 
 const getTravelsByCategory = (req, res) => {
-  const category = req.params.travel;
-  const data = fs.readFileSync(filePath, "utf-8");
-  const parsedData = JSON.parse(data);
-  const findCategories = parsedData.travels.filter(
-    (el) => el.category === category
-  );
-  res.status(201).json({ message: `success`, data: findCategories });
+  const {id} = req.params;
+  connection.query(
+    `SELECT * FROM travel WHERE id =${id}`, (err, result)=>{
+      if(err){
+        res.status(400).json({message: err.message})
+      }
+      res
+      .status(201)
+      .json({ message: "SUCCESS", data: result });
+    
+    } 
+  )
+  // const category = req.params.travel;
+  // const data = fs.readFileSync(filePath, "utf-8");
+  // const parsedData = JSON.parse(data);
+  // const findCategories = parsedData.travels.filter(
+  //   (el) => el.category === category
+  // );
+  // res.status(201).json({ message: `success`, data: findCategories });
 };
 
 module.exports = {

@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const { getBycat } = require("../controllers/category");
 const {
   getTravels,
   createTravel,
@@ -12,9 +13,8 @@ const router = Router();
 router.get("/", getTravels);
 router.post("/", createTravel);
 
-router.get("/:travel", getTravelsByCategory);
+// router.get("/:id", getTravelsByCategory);
 
 router.put("/:id", updateTravel);
 router.delete("/:id", deleteTravel);
-
 module.exports = router;

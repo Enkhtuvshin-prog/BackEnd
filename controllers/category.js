@@ -48,8 +48,6 @@ const getCategory = (req, res) => {
     }
     res.status(200).json({ message: "success", data: result });
   } )
- 
-
 };
 
 const updateCategory = (req, res) => {
@@ -129,10 +127,23 @@ const deletedCategory = (req, res) => {
   //   return res.status(400).json({ message: err.message });
   // }
 };
+
+const getBycat = (req, res)=>{
+  const {id}=req.params;
+  connection.query (
+    `SELECT * FROM travel WHERE cat_id =(SELECT id FROM category WHERE id = ${id}) `, (err, result)=>{
+      if(err){
+        return res.status(400).json({message: err.message})
+      }
+      res.status(200).json({ message: "success", data: result });
+    } )
+}
+
 module.exports = {
   allgetCategories,
   createCategory,
   getCategory,
   updateCategory,
   deletedCategory,
+  getBycat
 };

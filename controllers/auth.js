@@ -2,6 +2,7 @@ const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 const bcrypt = require("bcrypt");
 const filePath = "./data/users.json";
+const connection = require("../config/db");
 // const signInUser = (req, res) => {
 //   const { email, password } = req.body;
 //   const data = fs.readFileSync(filePath, "utf-8");
@@ -26,7 +27,7 @@ const filePath = "./data/users.json";
 const signInUser =(req, res)=>{
   const {email, password} = req.body;
 
-connection.query(`SELECT email, password FROM users WHERE email=${email} AND password = ${password}`, (err, result) => {
+connection.query(`SELECT email, password FROM users WHERE email="${email}" AND password = "${password}"`, (err, result) => {
   if (err) {
     return res.status(400).json({ message: err.message });
   }
